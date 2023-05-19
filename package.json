@@ -19,6 +19,7 @@
     "@types/node": "^20.2.1",
     "@zanminkian/tsconfig": "^0.4.2",
     "git-validator": "^0.4.5",
+    "typed-jest": "workspace:^",
     "typescript": "^5.0.4"
   }
 }

@@ -21,7 +21,8 @@
   },
   "types": "./src/index.d.ts",
   "bin": {
-    "jest": "./bin/jest.js"
+    "jest": "./bin/jest.js",
+    "typed-jest": "./bin/typed-jest.js"
   },
   "dependencies": {
     "@jest/globals": "^29.5.0",
