@@ -1,7 +1,7 @@
 {
   "name": "typed-jest",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Test framework supporting TypeScript out-of-box",
   "author": "hellozmj@qq.com",
   "license": "MIT",
