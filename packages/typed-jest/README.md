@@ -67,6 +67,8 @@ describe('app', () => {
 
 5. Run `pnpm jest` to execute tests.
 
+> Note: For the projects using `npm` as its package manager, please use `npx typed-jest` instead.
+
 ## Configuration
 
 1. Add more CLI configurations after the `pnpm jest` command. For example, run `pnpm jest --coverage` to collect test coverage. Run `pnpm jest -h` for more CLI options information.
