@@ -10,16 +10,16 @@
   },
   "scripts": {
     "postinstall": "git-validator install",
-    "lint": "git-validator",
-    "lint:fix": "git-validator --fix",
+    "style": "git-validator",
+    "style:apply": "git-validator -wf",
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
-    "@types/node": "^20.2.1",
-    "@zanminkian/tsconfig": "^0.4.2",
-    "git-validator": "^0.4.5",
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "^20.4.8",
+    "@zanminkian/tsconfig": "^0.6.0",
+    "git-validator": "^0.6.0",
     "typed-jest": "workspace:^",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   }
 }

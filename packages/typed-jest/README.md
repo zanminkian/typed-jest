@@ -24,6 +24,7 @@ pnpm remove jest @types/jest ts-jest
 ```
 
 2. Install `typed-jest`.
+
 ```sh
 pnpm add -D typed-jest
 ```
@@ -77,6 +78,7 @@ describe('app', () => {
 ## How it works
 
 If you don't include CLI options when running `pnpm jest`, we will append some sensible defaults:
+
 - `--transform='{"^.+\\\\.tsx?$":"ts-jest"}'`: This option transforms TypeScript files, so you can support TypeScript projects without additional configurations or installations.
 - `--passWithNoTests`: This option prevents the CLI from producing errors if no tests are found. You can override this default by `pnpm jest --passWithNoTests=false`.
 - `--collectCoverageFrom='**/src/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'`: This option specifies the location for collecting test coverage. Override it as needed: `pnpm jest --collectCoverageFrom='**/lib/**/*.js'`
