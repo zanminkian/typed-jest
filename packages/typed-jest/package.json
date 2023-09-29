@@ -1,11 +1,7 @@
 {
   "name": "typed-jest",
-  "type": "module",
   "version": "0.1.1",
   "description": "Test framework supporting TypeScript out-of-box",
-  "author": "hellozmj@qq.com",
-  "license": "MIT",
-  "homepage": "https://github.com/zanminkian/typed-jest",
   "keywords": [
     "testing",
     "typescript",
@@ -15,6 +11,10 @@
     "test",
     "framework"
   ],
+  "homepage": "https://github.com/zanminkian/typed-jest",
+  "license": "MIT",
+  "author": "hellozmj@qq.com",
+  "type": "module",
   "exports": {
     "require": "./src/index.cjs",
     "default": "./src/index.js"

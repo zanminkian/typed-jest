@@ -13,8 +13,8 @@ import {
   xdescribe,
   xit,
   xtest,
-} from '@jest/globals'
-import supertest from 'supertest'
+} from "@jest/globals";
+import supertest from "supertest";
 
 export {
   expect,
@@ -31,8 +31,8 @@ export {
   afterEach,
   afterAll,
   supertest,
-}
+};
 
 declare global {
-  const jest: typeof Jest
+  const jest: typeof Jest;
 }

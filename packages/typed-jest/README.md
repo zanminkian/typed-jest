@@ -32,38 +32,38 @@ pnpm add -D typed-jest
 3. Create an `app.ts` file.
 
 ```typescript
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
 app.use((req, res) => {
-  res.json({ hello: 'world' })
-})
+  res.json({ hello: "world" });
+});
 
-export default app
+export default app;
 ```
 
 4. Create an `app.spec.ts` file.
 
 ```typescript
-import { describe, beforeEach, it, expect, supertest } from 'typed-jest'
-import app from './app'
+import { describe, beforeEach, it, expect, supertest } from "typed-jest";
+import app from "./app";
 
-describe('app', () => {
+describe("app", () => {
   beforeEach(() => {
     // This will be executed before each test case.
-  })
+  });
 
   afterEach(() => {
-    jest.resetAllMocks()
-  })
+    jest.resetAllMocks();
+  });
 
-  it('should be 2', () => {
-    expect(1 + 1).toBe(2)
-  })
-  it('should success', () => {
-    supertest(app).get('/').expect({ hello: 'world' })
-  })
-})
+  it("should be 2", () => {
+    expect(1 + 1).toBe(2);
+  });
+  it("should success", () => {
+    supertest(app).get("/").expect({ hello: "world" });
+  });
+});
 ```
 
 5. Run `pnpm jest` to execute tests.
