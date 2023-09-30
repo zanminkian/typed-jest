@@ -1,5 +1,12 @@
 # typed-jest
 
+## 0.1.2
+
+### Patch Changes
+
+- b7a4757: chore: upgrade deps
+- cd13ea4: fix: fix config option crash
+
 ## 0.1.1
 
 ### Patch Changes
