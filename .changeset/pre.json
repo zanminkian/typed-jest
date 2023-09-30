@@ -4,5 +4,8 @@
   "initialVersions": {
     "typed-jest": "0.1.1"
   },
-  "changesets": []
+  "changesets": [
+    "nine-weeks-hammer",
+    "ninety-carrots-sing"
+  ]
 }

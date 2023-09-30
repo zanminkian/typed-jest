@@ -1,6 +1,6 @@
 {
   "name": "typed-jest",
-  "version": "0.1.1",
+  "version": "0.1.2-beta.0",
   "description": "Test framework supporting TypeScript out-of-box",
   "keywords": [
     "testing",
