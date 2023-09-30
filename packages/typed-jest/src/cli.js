@@ -18,10 +18,7 @@ async function getFileConfig(configPath) {
   if (typeof configPath === "string") {
     // eslint-disable-next-line @git-validator/no-dynamic-import
     const config = await import(resolve(process.cwd(), configPath));
-    if (config.default) {
-      return config.default;
-    }
-    return config;
+    return config.default ?? config;
   } else {
     return cosmiconfigSync("jest").search(join(__dirname, ".."))?.config ?? {};
   }
