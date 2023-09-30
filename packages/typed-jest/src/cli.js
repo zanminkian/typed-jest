@@ -1,4 +1,4 @@
-import { stat } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -6,19 +6,9 @@ import { cosmiconfigSync } from "cosmiconfig";
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs/yargs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const requireResolve = createRequire(import.meta.url).resolve;
 
-async function getTsJestPath(basePath = __dirname) {
-  const result = resolve(basePath, "node_modules/ts-jest");
-  const isDir = (await stat(result).catch(() => undefined))?.isDirectory();
-  if (isDir) {
-    return result;
-  }
-  if (basePath === "/") {
-    return "ts-jest";
-  }
-  return await getTsJestPath(resolve(basePath, ".."));
-}
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 async function getFileConfig(configPath) {
   if (typeof configPath === "string") {
@@ -40,7 +30,7 @@ export async function getConfigs() {
   const fileConfig = await getFileConfig(configPath);
 
   const result = [
-    ["transform", `{"^.+\\\\.tsx?$":"${await getTsJestPath()}"}`],
+    ["transform", `{"^.+\\\\.tsx?$":"${requireResolve("ts-jest")}"}`],
     ["passWithNoTests"],
     ["collectCoverageFrom", "**/src/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"],
   ].reduce(
