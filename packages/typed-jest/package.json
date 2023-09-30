@@ -24,6 +24,9 @@
     "jest": "./bin/jest.js",
     "typed-jest": "./bin/typed-jest.js"
   },
+  "scripts": {
+    "build": "tsc --noEmit -p ../../tsconfig.json"
+  },
   "dependencies": {
     "@jest/globals": "^29.7.0",
     "@types/supertest": "^2.0.13",
@@ -34,6 +37,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
+    "@types/yargs": "^17.0.26",
     "typescript": "^5.2.2"
   }
 }

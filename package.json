@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "pnpm -r build",
     "postinstall": "git-validator install",
     "release": "changeset publish",
     "style": "git-validator",
