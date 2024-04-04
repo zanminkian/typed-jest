@@ -2,7 +2,6 @@
 import process from "node:process";
 import { getConfigs } from "../src/cli.js";
 
-const configs = await getConfigs();
-process.argv.push(...configs);
+process.argv.push(...(await getConfigs()));
 
 await import("jest/bin/jest");
