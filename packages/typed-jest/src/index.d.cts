@@ -1,5 +1,4 @@
 import {
-  jest as Jest,
   afterAll,
   afterEach,
   beforeAll,
@@ -9,6 +8,7 @@ import {
   fdescribe,
   fit,
   it,
+  jest as Jest,
   test,
   xdescribe,
   xit,
@@ -17,20 +17,20 @@ import {
 import supertest from "supertest";
 
 export {
-  expect,
-  it,
-  test,
-  fit,
-  xit,
-  xtest,
-  describe,
-  xdescribe,
-  fdescribe,
+  afterAll,
+  afterEach,
   beforeAll,
   beforeEach,
-  afterEach,
-  afterAll,
+  describe,
+  expect,
+  fdescribe,
+  fit,
+  it,
   supertest,
+  test,
+  xdescribe,
+  xit,
+  xtest,
 };
 
 declare global {
