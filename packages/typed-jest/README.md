@@ -15,6 +15,10 @@ Test framework supporting TypeScript out-of-box.
 - Sensible defaults adhering to best practices. Most projects work seamlessly with **zero configuration**.
 - Integrated [supertest](https://www.npmjs.com/package/supertest) in it.
 
+## Why
+
+This is an all-in-one test framework designed for legacy **CommonJS TypesScript** project, supporting `experimentalDecorators` and `emitDecoratorMetadata`. For modern **ESM** project, you should consider to use [Vitest](https://vitest.dev/).
+
 ## Usage
 
 1. Uninstall `jest`, `@types/jest`, and `ts-jest` if they are already installed in your project.
