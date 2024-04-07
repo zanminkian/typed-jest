@@ -1,5 +1,11 @@
 # typed-jest
 
+## 0.1.3
+
+### Patch Changes
+
+- 4890b5d: chore: upgrade deps
+
 ## 0.1.2
 
 ### Patch Changes
