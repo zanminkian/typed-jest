@@ -25,8 +25,8 @@
   },
   "types": "./src/index.d.ts",
   "bin": {
-    "jest": "./bin/jest.js",
-    "typed-jest": "./bin/typed-jest.js"
+    "jest": "./src/bin/jest.js",
+    "typed-jest": "./src/bin/typed-jest.js"
   },
   "scripts": {
     "build": "tsc --noEmit -p ../../tsconfig.json"
