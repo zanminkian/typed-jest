@@ -6,7 +6,7 @@
 [![Dependencies](https://img.shields.io/librariesio/release/npm/typed-jest)](https://www.npmjs.com/package/typed-jest)
 [![Size](https://packagephobia.com/badge?p=typed-jest)](https://packagephobia.com/result?p=typed-jest)
 
-Test framework supporting TypeScript out-of-box.
+An all-in-one test framework supporting TypeScript out-of-box.
 
 ## Features
 
@@ -49,7 +49,8 @@ export default app;
 4. Create an `app.spec.ts` file.
 
 ```typescript
-import { describe, beforeEach, it, expect, supertest } from "typed-jest";
+import { afterEach, describe, beforeEach, it, expect, jest } from "typed-jest";
+import supertest from "typed-jest/supertest";
 import app from "./app";
 
 describe("app", () => {
