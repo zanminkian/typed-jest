@@ -20,8 +20,14 @@
   "author": "hellozmj@qq.com",
   "type": "module",
   "exports": {
-    "require": "./src/index.cjs",
-    "default": "./src/index.js"
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./supertest": {
+      "require": "./dist/supertest.cjs",
+      "import": "./dist/supertest.js"
+    }
   },
   "types": "./src/index.d.ts",
   "bin": {
@@ -29,7 +35,7 @@
     "typed-jest": "./src/bin/typed-jest.js"
   },
   "scripts": {
-    "build": "tsc --noEmit -p ../../tsconfig.json"
+    "build": "tsup src/index.ts src/supertest.ts --format cjs,esm --dts"
   },
   "dependencies": {
     "@jest/globals": "29.7.0",
@@ -42,6 +48,7 @@
   },
   "devDependencies": {
     "@types/yargs": "17.0.32",
+    "tsup": "8.0.2",
     "typescript": "5.4.4"
   }
 }
