@@ -1,5 +1,11 @@
 # typed-jest
 
+## 0.2.0-beta.0
+
+### Minor Changes
+
+- 0606f79: refactor: change the importation way of supertest
+
 ## 0.1.3
 
 ### Patch Changes
