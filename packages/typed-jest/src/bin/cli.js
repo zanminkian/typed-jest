@@ -7,6 +7,8 @@ import { lilconfig } from "lilconfig";
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs/yargs";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const tsJestPath = createRequire(import.meta.url).resolve("ts-jest");
 
 /**
@@ -18,7 +20,6 @@ async function getFileConfig(configPath) {
     const config = await import(path.resolve(process.cwd(), configPath));
     return config.default ?? config;
   } else {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
     const config = await lilconfig("jest").search(path.join(__dirname, ".."));
     return config?.config ?? {};
   }
@@ -32,7 +33,27 @@ export async function getConfigs() {
    * @type {([string]|[string,string])[]}
    */
   const defaultConfigs = [
-    ["transform", `{"^.+\\\\.tsx?$":"${tsJestPath}"}`],
+    [
+      "transform",
+      JSON.stringify({
+        "^.+\\.tsx?$": [
+          tsJestPath,
+          {
+            astTransformers: {
+              before: [
+                path.join(
+                  __dirname,
+                  "..",
+                  "..",
+                  "dist",
+                  "hoist-typed-jest.cjs",
+                ),
+              ],
+            },
+          },
+        ],
+      }),
+    ],
     ["passWithNoTests"],
     ["collectCoverageFrom", "**/src/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"], // TODO collecting coverage from src folder is not the best choice.
   ];
