@@ -36,11 +36,15 @@ pnpm add -D typed-jest
 3. Create an `app.ts` file.
 
 ```typescript
-import express from "express";
+import fs from "node:fs";
+import express, { type Express } from "express";
 
-const app = express();
-app.use((req, res) => {
-  res.json({ hello: "world" });
+const json = fs.readFileSync("package.json", "utf-8");
+
+const app: Express = express();
+app.get("/pkg", function (_req, res) {
+  console.log("package.json", json);
+  res.status(200).json(JSON.parse(json));
 });
 
 export default app;
@@ -49,24 +53,37 @@ export default app;
 4. Create an `app.spec.ts` file.
 
 ```typescript
-import { afterEach, describe, beforeEach, it, expect, jest } from "typed-jest";
+import {
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  type jest as J,
+} from "typed-jest";
 import supertest from "typed-jest/supertest";
 import app from "./app";
 
+declare const jest: typeof J;
+
+jest.mock("node:fs", () => ({
+  readFileSync: () => JSON.stringify({ foo: "bar" }),
+}));
+
 describe("app", () => {
   beforeEach(() => {
-    // This will be executed before each test case.
+    console.log("========beforeEach running========");
   });
-
   afterEach(() => {
-    jest.resetAllMocks();
+    console.log("========afterEach running========");
   });
-
   it("should be 2", () => {
     expect(1 + 1).toBe(2);
   });
-  it("should success", () => {
-    supertest(app).get("/").expect({ hello: "world" });
+  it("should success", async () => {
+    const response = await supertest(app).get("/pkg");
+    expect(response.status).toEqual(200);
+    expect(response.body).toStrictEqual({ foo: "bar" });
   });
 });
 ```
