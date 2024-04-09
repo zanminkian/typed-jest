@@ -5,6 +5,7 @@
     "typed-jest": "0.1.3"
   },
   "changesets": [
+    "blue-llamas-listen",
     "blue-sloths-rush"
   ]
 }
