@@ -1,6 +1,6 @@
 {
   "name": "typed-jest",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "An all-in-one test framework supporting TypeScript out-of-box.",
   "keywords": [
     "testing",

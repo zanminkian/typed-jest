@@ -1,5 +1,12 @@
 # typed-jest
 
+## 0.2.0
+
+### Minor Changes
+
+- 3d64568: feat: allow import jest
+- 0606f79: refactor: change the importation way of supertest
+
 ## 0.1.3
 
 ### Patch Changes
