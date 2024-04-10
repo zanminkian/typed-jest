@@ -12,6 +12,8 @@ An all-in-one test framework supporting TypeScript out-of-box.
 
 - 100% compatible with [Jest](https://jestjs.io/). Use `typed-jest` just like you would use `jest`.
 - Out-of-the-box TypeScript support.
+- All in one. The best practice to use jest in TypeScript (CJS) project.
+- No implicit globals.
 - Sensible defaults adhering to best practices. Most projects work seamlessly with **zero configuration**.
 - Integrated [supertest](https://www.npmjs.com/package/supertest) in it.
 
