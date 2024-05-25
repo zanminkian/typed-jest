@@ -9,13 +9,14 @@
     "postinstall": "git-validator install",
     "release": "pnpm build && changeset publish",
     "style": "git-validator",
-    "style:update": "git-validator -u"
+    "style:update": "git-validator -u",
+    "test": "pnpm style"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
     "@types/node": "20.12.5",
     "git-validator": "0.15.11",
-    "typed-jest": "workspace:^",
+    "typed-jest": "workspace:*",
     "typescript": "5.4.4"
   },
   "packageManager": "pnpm@8.15.4",
