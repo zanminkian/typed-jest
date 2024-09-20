@@ -55,7 +55,7 @@ export default app;
 4. Create an `app.spec.ts` file.
 
 ```typescript
-import { describe, it, expect, beforeEach, afterEach, jest } from "typed-jest";
+import { afterEach, beforeEach, describe, expect, it, jest } from "typed-jest";
 import supertest from "typed-jest/supertest";
 import app from "./app";
 

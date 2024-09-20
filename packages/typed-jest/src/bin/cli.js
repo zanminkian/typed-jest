@@ -16,7 +16,7 @@ const tsJestPath = createRequire(import.meta.url).resolve("ts-jest");
  */
 async function getFileConfig(configPath) {
   if (typeof configPath === "string") {
-    // eslint-disable-next-line @git-validator/no-dynamic-import
+    // eslint-disable-next-line esm/no-dynamic-imports
     const config = await import(path.resolve(process.cwd(), configPath));
     return config.default ?? config;
   } else {
