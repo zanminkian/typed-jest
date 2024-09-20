@@ -1,5 +1,11 @@
 # typed-jest
 
+## 0.2.1
+
+### Patch Changes
+
+- f9d0a9a: chore: upgrade deps
+
 ## 0.2.0
 
 ### Minor Changes
